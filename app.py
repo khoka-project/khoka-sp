@@ -78,15 +78,38 @@ nav= dbc.Nav(
                             in_navbar=True,
                             label=dbc.NavLink("METODOLOGÍA", href="/khoka_methodology",style={'padding':0}),    
                         ),
-#                        dbc.NavItem(dbc.NavLink("METODOLOGÍA", href="/khoka_methodology",style={'padding':0})),
-                        dbc.NavItem(dbc.NavLink("CONCLUSIONES", href="#")),
+                        dbc.DropdownMenu(
+                            [
+                                dbc.DropdownMenuItem("MAPA DE METABOLITOS", header=False,
+                                    href=f"#bt-descarga",external_link=True,style={"fontFamily":"basker_120","fontSize":"1rem","line-height":"1"}),
+                                dbc.DropdownMenuItem("El estudio de metabolitos en la hoja de coca", header=False,
+                                    href=f"#conclu_estudio",external_link=True,style={"fontFamily":"basker_120","fontSize":"1rem","line-height":"1"}),
+                                dbc.DropdownMenuItem("Resultado del análisis químico de las cuatro variedades", header=False,
+                                    href=f"#conclu_resultados",external_link=True,style={"fontFamily":"basker_120","fontSize":"1rem","line-height":"1"}),
+                                dbc.DropdownMenuItem("Conclusiones del estudio de metabolitos en las variedades de coca", header=False,
+                                    href=f"#conclu_variedades",external_link=True,style={"fontFamily":"basker_120","fontSize":"1rem","line-height":"1"}),
+                                dbc.DropdownMenuItem("Alcaloides", 
+                                    href=f"#conclu_var-1",external_link=True,style={"fontFamily":"basker_120","fontSize":"0.8rem","line-height":"1"}),
+                                dbc.DropdownMenuItem("Ácidos Fenólicos", 
+                                    href=f"#conclu_var-2",external_link=True,style={"fontFamily":"basker_120","fontSize":"0.8rem","line-height":"1"}),
+                                dbc.DropdownMenuItem(["Comparación de compuestos presentes en la literatura vs. los presentes en el jardín de ", html.Span("Khoka Project", className="italic-text"), "."], header=False,
+                                    href=f"#conclu_compara",external_link=True,style={"fontFamily":"basker_120","fontSize":"1rem","line-height":"1"}),
+                                dbc.DropdownMenuItem("REFERENCIAS BIBLIOGRÁFICAS", header=False,
+                                    href=f"#conclu_referen",external_link=True,style={"fontFamily":"basker_120","fontSize":"1rem","line-height":"1"}),
+
+
+                            ],
+                            class_name='conclusion',
+                            nav=True,
+                            in_navbar=True,
+                            label=dbc.NavLink("CONCLUSIONES", href="/khoka_conclusions",style={'padding':0}),    
+                        ),
                         dbc.DropdownMenu(
                             class_name='glosary',
                             nav=True,
                             in_navbar=True,
                             label=dbc.NavLink("GLOSARIO", href="/khoka_glossary",style={'padding':0}),    
                         ),
-#                        dbc.NavItem(dbc.NavLink("GLOSARIO", href="#")),
                         dbc.DropdownMenu(
                             class_name='bibliography',
                             nav=True,
@@ -96,7 +119,6 @@ nav= dbc.Nav(
                         dbc.Col(
                             width=1
                         ),
-#                        dbc.NavItem(dbc.NavLink("BIBLIOGRAFÍA", href="#")),
                     ],
                     style={'fontFamily': 'clutadella_light','backgroundColor': '#9abf99'},
                     justified=True,
@@ -129,10 +151,10 @@ app.layout = html.Div([
             ])
 
 # Define the layout of the page
-# for page in dash.page_registry.values():
-#     print('name:', page['name'])
-#     print('url:', page['path'])
+for page in dash.page_registry.values():
+    print('name:', page['name'])
+    print('url:', page['path'])
 
 if __name__ == "__main__":
     app.run_server(
-        debug=True,port=8000)
+        debug=True)
