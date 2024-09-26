@@ -24,7 +24,7 @@ pagina_novo = False
 pagina_ipadu = False
 
 def treemap_layout():
-    pie=[dcc.Dropdown(['All Metabolites','Primary Metabolites','Secondary Metabolites'],'All Metabolites',id='dropdown_treemap'),dcc.Graph(id="treemap",clear_on_unhover=True),dcc.Tooltip(id="graph-tooltip", direction='bottom')]
+    pie=[dcc.Dropdown(['Todos los Metabolitos','Metabolitos Primarios','Metabolitos Secundarios'],'Todos los Metabolitos',id='dropdown_treemap'),dcc.Graph(id="treemap",clear_on_unhover=True),dcc.Tooltip(id="graph-tooltip", direction='bottom')]
     return pie
     
 def area(variety,label):
@@ -70,6 +70,7 @@ portada =  dbc.Row(
 resultado = [dbc.Row([
     dbc.Row(className="espaciado_96_esc espaciado_96_mov"),
     html.Div("RESULTADOS", className="body-title-green"),
+    dbc.Row([dbc.Col([
     dbc.Container(
             [
             # CARACTERIZACION QUIMICA POR VARIEDADES
@@ -80,28 +81,28 @@ resultado = [dbc.Row([
                      cuáles tienen  actividad biológica y visualizar los cromatogramas de cada muestra estudiada.",style={'textAlign':'center'}),
             dbc.Row(className="espaciado_48_esc espaciado_48_mov")],className="subcontainer-results"),
     dbc.Row([
-        dbc.Col(html.Img(src="/assets/trux.png", height="150px"), width=3,style={"padding":0}),
-        dbc.Col(html.Img(src="/assets/ipadu.png", height="150px"), width=3,style={"padding":0}),
-        dbc.Col(html.Img(src="/assets/coca.png", id="h-coca", height="150px"), width=3,style={"padding":0}),
-        dbc.Col(html.Img(src="/assets/novo.png", height="150px"), width=3,style={"padding":0})
-    ], justify="around"),
+        dbc.Col(html.Img(src="/assets/trux.png", height="150px"), width=2,style={"margin":'0.5rem'}),
+        dbc.Col(html.Img(src="/assets/ipadu.png", height="150px"), width=2,style={"margin":'0.5rem'}),
+        dbc.Col(html.Img(src="/assets/coca.png", id="h-coca", height="150px"), width=2,style={"margin":'0.5rem'}),
+        dbc.Col(html.Img(src="/assets/novo.png", height="150px"), width=2,style={"margin":'0.5rem'})
+    ], justify="center"),
     dbc.Row(style={'height':'1rem'}),
     dbc.Row([dbc.Col([
                         html.A(["Erythroxylum novogranatense ",html.Span(" var. ",className="var")," truxillense"],href=f"#all_compounds_treemap",
-                        className="var_tru_text",id="trux", n_clicks=0)],id="trux_box",className="var_trux_box"),
+                        className="var_trux_text ",id="trux", n_clicks=0)],id="trux_box",className="var_trux_box",width=4),
                     
                     dbc.Col([  
                         html.A(["Erythroxylum coca ",html.Span("var. ",className="var")," ipadu"],href=f"#all_compounds_treemap",
-                        className="var_ipadu_text", id="ipadu", n_clicks=0)],id="ipadu_box",className="var_ipadu_box"),
+                        className="var_ipadu_text", id="ipadu", n_clicks=0)],id="ipadu_box",className="var_ipadu_box",width=4),
                
                     dbc.Col([ 
                         html.A(["Erythroxylum coca ",html.Span("var. ",className="var")," coca"],href=f"#all_compounds_treemap",
-                        className="var_coca_text", id="coca")],id="coca_box",className="var_coca_box"),
+                        className="var_coca_text", id="coca")],id="coca_box",className="var_coca_box",width=4),
                     dbc.Col([ 
                         html.A(["Erythroxylum novogranatense ",html.Span("var. ",className="var")," novogranatense"],href=f"#all_compounds_treemap",
-                        className="var_novo_text", id="novo")],id="novo_box",className="var_novo_box"),
+                        className="var_novo_text", id="novo")],id="novo_box",className="var_novo_box",width=4),
                     dcc.Store(id='clicked-button', data=None)
-                    ],className="gap-1",justify="between"), 
+                    ],className="gap-1",justify="center"), 
     dbc.Container([
             dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
             dbc.Row("Este gráfico muestra todos los metabolitos encontrados en esta variedad de coca. \
@@ -110,20 +111,18 @@ resultado = [dbc.Row([
             dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
             ],className="subcontainer-results"),
     dbc.Row(html.Div(html.Div(id='all_compounds_treemap',className="treemap"))),
-    dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
-    dbc.Row(dbc.Col(html.Div(id='compound_description',className="compound_description"))),
-    dbc.Row(className="espaciado_96_esc espaciado_96_mov"),   
-    dbc.Row(className="espaciado_24_esc espaciado_24_mov"),    
-    dbc.Row(className="espaciado_24_esc espaciado_24_mov"), 
+    dbc.Row(className="espaciado_48_esc hide"),
+    dbc.Row(className="espaciado_96_esc hide"),   
+   
     dbc.Container([    
             # COMPUESTOS BIOACTIVOS
-            dbc.Row(html.Div("COMPUESTOS BIOACTIVOS", id="compuestos_bioactivos", className="results_title")),
+            dbc.Row(html.Div("COMPUESTOS BIOACTIVOS", id="compuestos_bioactivos", className="results_title hide")),
             dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
             html.Div("Conoce los compuestos de esta variedad de coca que tienen actividad biológica, es decir, que pueden presentar efectos fisiológicos en el ser humano."),
-            ],className="subcontainer-results"),
-    dbc.Row(className="espaciado_24_esc"),
-    dbc.Row(html.Div(id='classification')),
-    dbc.Row(className="espaciado_96_esc espaciado_96_mov"),
+            ],className="subcontainer-results hide"),
+    dbc.Row(className="espaciado_24_esc espaciado_24_mov"),
+    dbc.Row(html.Div(id='classification'),className="hide"),
+    dbc.Row(className="espaciado_96_esc hide"),
     dbc.Container([ 
             # CROMATOGRAMA
             dbc.Row(className="espaciado_24_esc espaciado_24_mov"),
@@ -133,11 +132,14 @@ resultado = [dbc.Row([
                      analizado. Te permite visualizar por variedad de coca y tipo de extracto. El tiempo de \
                      retención indica la naturaleza química de la sustancia: un tiempo de retención corto \
                      sugiere compuestos de naturaleza grasa, mientras que un tiempo largo indica compuestos \
-                     que se disuelven en agua, como azúcares o aminoácidos."),       
-            
-            ],className="subcontainer-results"),
-    dbc.Row(className="espaciado_24_esc espaciado_24_mov"),
-    dbc.Row([dbc.Col(html.Div(id='area_compounds'),width={"size":12,"order":1})]),
+                     que se disuelven en agua, como azúcares o aminoácidos.")],className="subcontainer-results hide"),
+    dbc.Row(className="espaciado_24_esc hide"),
+    dbc.Row([dbc.Col(html.Div(id='area_compounds'),width={"size":12,"order":1})],className="hide")],xs={"size": 12, "order": 1},md={"size": 6, "order": 1}),
+    
+    dbc.Col([html.Div(id='compound_description',className="compound_description")],className="compound_description_box", 
+            xs={"size": 12, "order": 2},md={"size": 6, "order": 2})]),
+
+    html.A(className='boton-scroll',href='#top', children=html.Img(src='/assets/icon-top.jpeg',style={'width': '48px', 'height': '48px'})),
     ], className="container-results")]
     
 # Define the layout
@@ -189,7 +191,6 @@ def display_click_data(n_clicks1,n_clicks2,n_clicks3,n_clicks4):
         pagina_trux = True
         pagina_coca,pagina_ipadu,pagina_novo,pagina_khoka = False, False, False, False
 
-
     if ctx.triggered_id == 'coca' :
         fig_1 = treemap_layout()
         fig_2 = area('Coca','_coca')
@@ -226,6 +227,14 @@ def display_click_data(n_clicks1,n_clicks2,n_clicks3,n_clicks4):
 
 def treemap_graph(value,n_clicks1,n_clicks2,n_clicks3,n_clicks4):
     global pagina_trux,pagina_coca,pagina_ipadu,pagina_novo,pagina_khoka, diccionario_esp_ing  
+    
+    if value == "Todos los Metabolitos":
+        value = "All Metabolites"
+    elif value == "Metabolitos Primarios":
+        value = "Primary Metabolites"
+    elif value == "Metabolitos Secundarios":
+        value = "Secondary Metabolites"
+
     variety = pd.read_csv(os.path.join(os.getcwd(),'khoka.csv')) # cargar excel
     fila_cabecera = list(variety) # Generar una lista con las cabeceras
     color_palet = {'(?)':'white'}
@@ -241,7 +250,7 @@ def treemap_graph(value,n_clicks1,n_clicks2,n_clicks3,n_clicks4):
                     contador+=1
                 if k == "Insaturados":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    # opacidad = 1
+                    # opacidad = 1Insaturated
                     #color_palet[i]='rgba(199, 119, 28,'+str(opacidad)+')'
                     color_palet["Insaturados"]='rgba(18, 9, 124, '+str(opacidad)+')'
                     contador+=1
@@ -262,12 +271,6 @@ def treemap_graph(value,n_clicks1,n_clicks2,n_clicks3,n_clicks4):
                     # opacidad = 1
                     #color_palet[i]='rgba(244, 111, 54,'+str(opacidad)+')'
                     color_palet['Alcoholes']='rgba(184, 80, 117, '+str(opacidad)+')'
-                    contador+=1
-                if k == "Aminoderivados":
-                    clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    # opacidad = 1
-                    #color_palet[i]= 'rgba(191, 59, 33,'+str(opacidad)+')'
-                    color_palet['Aminoderivados']= 'rgba(87, 180, 110, '+str(opacidad)+')'
                     contador+=1
                 if k == "Amidas":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
@@ -527,24 +530,24 @@ def classification_(n_clicks):
     
     color_palet = {'(?)':"white"}
     for k in fila_cabecera[4:]:
-            contador=1
             opacidad = 1
+            contador=1
             for i in [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']:         
                 if k == "Saturados":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    #opacidad = 1
+                    # opacidad =   0.7
                     #color_palet[i]='rgba(117,68,40,'+str(opacidad)+')'
                     color_palet["Saturados"]='rgba(134, 73, 117,'+str(opacidad)+')'
                     contador+=1
                 if k == "Insaturados":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    #opacidad = 1
+                    # opacidad = 1Insaturated
                     #color_palet[i]='rgba(199, 119, 28,'+str(opacidad)+')'
                     color_palet["Insaturados"]='rgba(18, 9, 124, '+str(opacidad)+')'
                     contador+=1
                 if k == "Ácidos":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    #opacidad = 1
+                    # opacidad = 1
                     #color_palet[i]='rgba(77, 189, 132,'+str(opacidad)+')'
                     color_palet['Ácidos']='rgba(0, 151, 131, '+str(opacidad)+')' 
                     contador+=1
@@ -560,15 +563,9 @@ def classification_(n_clicks):
                     #color_palet[i]='rgba(244, 111, 54,'+str(opacidad)+')'
                     color_palet['Alcoholes']='rgba(184, 80, 117, '+str(opacidad)+')'
                     contador+=1
-                if k == "Aminoderivados":
-                    clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    # opacidad = 1
-                    #color_palet[i]= 'rgba(191, 59, 33,'+str(opacidad)+')'
-                    color_palet['Aminoderivados']= 'rgba(87, 180, 110, '+str(opacidad)+')'
-                    contador+=1
                 if k == "Amidas":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    opacidad = 1
+                    # opacidad = 1
                     #color_palet[i]='rgba(224, 182, 23,'+str(opacidad)+')' 
                     color_palet['Amidas']='rgba(0, 132, 183, '+str(opacidad)+')'
                     contador+=1
@@ -580,7 +577,7 @@ def classification_(n_clicks):
                     contador+=1
                 if k == "Glúcidos":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
-                    # pacidad = 1
+                    # opacidad = 1
                     #color_palet[i]='rgba(219, 67, 88,'+str(opacidad)+')'
                     color_palet['Glúcidos']='rgba(89, 147, 152, '+str(opacidad)+')'
                     contador+=1
@@ -588,7 +585,7 @@ def classification_(n_clicks):
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
                     # opacidad = 1
                     #color_palet[i]='rgba(102, 206, 245,'+str(opacidad)+')' 
-                    color_palet["Aminoácidos"]='rgba(137, 147, 151, '+str(opacidad)+')'
+                    color_palet["Aminoácidos"]='rgba(137, 147, 151, '+str(opacidad)+')' 
                     contador+=1
                 if k == "Alcaloides":
                     clasificacion = [x for x in variety[k] if pd.isnull(x) == False and x != 'nan']
@@ -767,8 +764,9 @@ def area_(value,n_clicks1,n_clicks2,n_clicks3,n_clicks4):
 
 def display_hover(hoverData1,hoverData2,hoverData3):
     global diccionario_esp_ing
-
+    
     if hoverData1 is not None:
+        print(hoverData1["points"][0]['label'])
         hover_data1 = diccionario_esp_ing[hoverData1["points"][0]['label']]
         bbox = hoverData1["points"][0]["bbox"]
         if str(hover_data1[-1]) == " ":
@@ -826,21 +824,27 @@ def display_hover(hoverData1,hoverData2,hoverData3):
         im_url = "/assets/structures/"+ compound +'.svg'
     
         children = [
+
             html.Img(
                 src=im_url,
                 style={"width": "200px"},
             ),
+            
         ]
         
         molecule_image="/assets/structures/"+ compound +'.svg'
+        
         return hoverData3["points"][0]['hovertext'], molecule_image,True, bbox, children, direction
 
 @callback(
     Output('compound_description_text','children'),
-    Input("titulo_descripcion_compound",'children')
+    Input("titulo_descripcion_compound",'children'),
+    Input("treemap", "hoverData")
    )
+   
 
-def texto_descriptivo(children):
+def texto_descriptivo(children,hoverData1):
+    
     variety = pd.read_csv(os.path.join(os.getcwd(),'khoka.csv'))
     variety_metabolitos_secundarios = list(variety['Secondary Metabolites'])
     variety_metabolitos_secundarios = [x for x in  variety_metabolitos_secundarios if pd.isnull(x) == False and x != 'nan']
@@ -858,6 +862,8 @@ def texto_descriptivo(children):
     else:
         texto_metabolito = relacion_metabolito_texto_p[children]
 
+    #if hoverData1['points'][0]['label'] == "Acids" :
+    #    texto_metabolito = "ESTE TEXTO SE DEBE MOSTRAR"
     return texto_metabolito
 
 @callback(

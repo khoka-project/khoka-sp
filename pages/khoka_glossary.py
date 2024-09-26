@@ -305,6 +305,7 @@ glosario = dbc.Container(
                 dbc.Row(className="espaciado_24_esc espaciado_24_mov"),
                 html.Div(["Un xenobiótico es una sustancia química que se encuentra en un organismo pero no es producida por él."]),
                        dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
+                html.A(className='boton-scroll',href='#top', children=html.Img(src='/assets/icon-top.jpeg',style={'width': '48px', 'height': '48px'})),
 
 
 

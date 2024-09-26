@@ -46,6 +46,7 @@ metodologia = dbc.Container(
                 html.Div(["** Dalton es la unidad de masa atómica unificada. Es una unidad estándar definida como un doceavo (1/12) de la masa de un átomo neutro y no enlazado de carbono-12, en su estado fundamental eléctrico y nuclear. Equivale a 1.6605402×10",html.Sup(-27)," kilogramos. Un mol de unidades de masa atómica es equivalente a un gramo. Un átomo de hidrógeno tiene una masa de 1.00784 dáltones, y una molécula de agua tiene una masa de 18.01528 dáltones."],className="footnote"),
                 dbc.Row(className="espaciado_24_esc espaciado_24_mov"),
                 html.Div(["La relación entre los valores de masa atómica y la masa macroscópica se establece a través del concepto de mol, que es la cantidad de unidades de una sustancia que contiene aproximadamente 6.0221367(36)x10",html.Sup(23),"entidades elementales, cifra que corresponde al valor numérico de la constante de Avogadro o número de Avogadro. Este número representa la cantidad total de átomos presentes en 12 gramos del isótopo de carbono-12. "],className="footnote"),
+                html.A(className='boton-scroll',href='#top', children=html.Img(src='/assets/icon-top.jpeg',style={'width': '48px', 'height': '48px'})),
                 
             ],
             className="container-text"
