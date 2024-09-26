@@ -75,7 +75,7 @@ resultado = [dbc.Row([
             [
             # CARACTERIZACION QUIMICA POR VARIEDADES
             dbc.Row(className="espaciado_96_esc espaciado_96_mov"),
-            dbc.Row("CARACTERIZACIÓN QUÍMICA DE LAS VARIEDADES DE LA COCA",className="results_title",id="caracterizacion"),
+            dbc.Row([html.Div("CARACTERIZACIÓN QUÍMICA DE LAS VARIEDADES DE LA COCA",className="results_title")],id="caracterizacion"),
             dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
             dbc.Row("Explora el perfil químico de cada variedad de coca para conocer los metabolitos que contiene,\
                      cuáles tienen  actividad biológica y visualizar los cromatogramas de cada muestra estudiada.",style={'textAlign':'center'}),
