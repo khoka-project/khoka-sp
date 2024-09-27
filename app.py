@@ -65,9 +65,9 @@ nav= dbc.Nav(
                         dbc.DropdownMenu(
                             [
 
-                                dbc.DropdownMenuItem("CARACTERIZACIÓN QUÍMICA POR VARIEDADES",style={"fontFamily":"basker_120","fontSize":"0.75rem","line-height":"1"}, href=f"#caracterizacion",external_link=True),
-                                dbc.DropdownMenuItem("COMPUESTOS BIOACTIVOS",style={"fontFamily":"basker_120","fontSize":"0.75rem","line-height":"1"},className="hide", href=f"#compuestos_bioactivos",external_link=True),
-                                dbc.DropdownMenuItem("CROMATOGRAMAS",style={"fontFamily":"basker_120","fontSize":"0.75rem","line-height":"1"},className="hide", href=f"#cromatogramas",external_link=True)
+                                dbc.DropdownMenuItem("Caracterización química por variedades",style={"fontFamily":"basker_120","fontSize":"0.75rem","line-height":"1"}, href=f"#caracterizacion",external_link=True),
+                                dbc.DropdownMenuItem("Compuestos bioactivos",style={"fontFamily":"basker_120","fontSize":"0.75rem","line-height":"1"},className="hide", href=f"#compuestos_bioactivos",external_link=True),
+                                dbc.DropdownMenuItem("Cromatogramas",style={"fontFamily":"basker_120","fontSize":"0.75rem","line-height":"1"},className="hide", href=f"#cromatogramas",external_link=True)
 
                             ],
                             nav=True,
