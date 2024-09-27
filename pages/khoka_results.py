@@ -75,7 +75,7 @@ resultado = [dbc.Col([
             [
             # CARACTERIZACION QUIMICA POR VARIEDADES
             dbc.Row(className="espaciado_96_esc espaciado_96_mov"),
-            dbc.Row([html.Div("CARACTERIZACIÓN QUÍMICA DE LAS VARIEDADES DE LA COCA",className="results_title")],id="caracterizacion"),
+            dbc.Row([html.Div("Caracterización química de las variedades de la coca",className="results_title")],id="caracterizacion"),
             dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
             dbc.Row("Explora el perfil químico de cada variedad de coca para conocer los metabolitos que contiene,\
                      cuáles tienen  actividad biológica y visualizar los cromatogramas de cada muestra estudiada.",style={'textAlign':'center'}),
@@ -117,7 +117,7 @@ resultado = [dbc.Col([
    
     dbc.Container([    
             # COMPUESTOS BIOACTIVOS
-            dbc.Row(html.Div("COMPUESTOS BIOACTIVOS", id="compuestos_bioactivos", className="results_title hide")),
+            dbc.Row(html.Div("Compuestos bioactivos", id="compuestos_bioactivos", className="results_title hide")),
             dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
             html.Div("Conoce los compuestos de esta variedad de coca que tienen actividad biológica, es decir, que pueden presentar efectos fisiológicos en el ser humano."),
             ],className="subcontainer-results hide"),
@@ -127,7 +127,7 @@ resultado = [dbc.Col([
     dbc.Container([ 
             # CROMATOGRAMA
             dbc.Row(className="espaciado_24_esc espaciado_24_mov"),
-            dbc.Row(html.Div("CROMATOGRAMAS", id="cromatogramas", className="results_title")),
+            dbc.Row(html.Div("Cromatogramas", id="cromatogramas", className="results_title")),
             dbc.Row(className="espaciado_48_esc espaciado_48_mov"),
             html.Div("Este gráfico muestra los resultados de las lecturas cromatográficas de cada extracto \
                      analizado. Te permite visualizar por variedad de coca y tipo de extracto. El tiempo de \
