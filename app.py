@@ -27,9 +27,6 @@ header = dbc.Row([
 
 nav= dbc.Nav(
                     [
-                        dbc.Col(
-                            width=1
-                        ),
                         dbc.DropdownMenu(
                             [
                                 dbc.DropdownMenuItem("¿Qué es la metabolómica?", header=False,
@@ -47,7 +44,7 @@ nav= dbc.Nav(
                             ],
                             nav=True,
                             in_navbar=True,
-                            label=dbc.NavLink("INTRODUCCIÓN", href="/",style={'padding':0}),
+                            label=dbc.NavLink("INTRODUCCIÓN", href="/",style={'padding':0,'marginLeft':'1rem'}),
                         ),
                         dbc.DropdownMenu(
                             [
@@ -124,10 +121,7 @@ nav= dbc.Nav(
                             class_name='bibliography',
                             nav=True,
                             in_navbar=True,
-                            label=dbc.NavLink("BIBLIOGRAFÍA", href="/khoka_bibliography",style={'padding':0}),    
-                        ),
-                        dbc.Col(
-                            width=1
+                            label=dbc.NavLink("BIBLIOGRAFÍA", href="/khoka_bibliography",style={'padding':0,'marginRight':'2rem'}),    
                         ),
                     ],
                     style={'fontFamily': 'clutadella_light','backgroundColor': '#9abf99'},
