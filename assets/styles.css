@@ -196,7 +196,7 @@ html {
     padding-right: 0; 
     padding-left: 20;
     text-align: left;
-    text-indent: -20px;
+    text-indent: -10px;
 }
 
 .container-text {
@@ -391,7 +391,7 @@ html {
     text-align:center;
     font-size: 0.80rem;
     font-family: 'basker_120_italic';
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 .var_tru_box:hover{
@@ -408,7 +408,7 @@ html {
     text-align:center;
     font-size: 0.8rem;
     font-family: 'basker_120_italic';
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 .var_coca_box:hover{
@@ -430,7 +430,7 @@ html {
     text-align:center;
     font-size: 0.8rem;
     font-family: 'basker_120_italic';
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 .var_novo_box {
@@ -451,7 +451,7 @@ html {
     text-align:center;
     font-size: 0.8rem;
     font-family: 'basker_120_italic';
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 .treemap {
@@ -590,7 +590,7 @@ html {
     .results_title {
         text-align: center;
         font-family: 'basker_120';
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         color:var(--verde_claro);
         line-height: 1.3;
     
