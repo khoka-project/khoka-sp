@@ -109,7 +109,7 @@ nav= dbc.Nav(
                             class_name='conclusion',
                             nav=True,
                             in_navbar=True,
-                            label=dbc.NavLink("CONCLUSIONES", href="/khoka_conclusions",style={'padding':0}),    
+                            label=dbc.NavLink("CONCLUSION", href="/khoka_conclusions",style={'padding':0}),    
                         ),
                         dbc.DropdownMenu(
                             class_name='glosary',
