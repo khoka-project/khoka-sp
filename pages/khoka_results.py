@@ -38,7 +38,7 @@ def area(variety,label):
 
 def description():
     description_block= [
-        dbc.Row(html.Div("Cocaine",id='titulo_descripcion_compound',className="titulo_grafica_compound")),
+        dbc.Row(html.Div("Cocaina",id='titulo_descripcion_compound',className="titulo_grafica_compound")),
         dbc.Row(className="espaciado_24_esc espaciado_24_mov"),
         dbc.Row([dbc.Col(html.Img(id='compound_image',className="compound_images",src="../assets/structures/Cocaine.svg"),xs={"size":12},lg={"size":6},
                         ),
